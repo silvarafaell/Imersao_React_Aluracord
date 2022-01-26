@@ -1,4 +1,4 @@
-### Imersão React 2022 - Projeto Aluracord
+### Imersão React Alura 2022 - Projeto Aluracord
 # Aula 1: Matrix Chat: Criando o nosso projeto Aluracord
 Comandos utilizados: 
 - npm init -y
