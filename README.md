@@ -8,3 +8,5 @@ Comandos utilizados:
 - npm i gitignore
 ![Alt text](https://github.com/silvarafaell/Imersao_React_Aluracord/blob/main/images/Aula1.png?raw=true "Aula 1")
 
+# Aula 2: State, novas páginas e navegação SPA vs a Tradicional
+
