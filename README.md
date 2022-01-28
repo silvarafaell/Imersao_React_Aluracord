@@ -19,3 +19,4 @@ Conteúdos vistos:
 - Pasta pages é no Next.js 
 - api.github.com/users/silvarafaell(Mostra informações do usuário)
 
+# Aula 3: Chat offline? Aprimorando as habilidades com State
