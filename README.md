@@ -20,3 +20,5 @@ Conteúdos vistos:
 - api.github.com/users/silvarafaell(Mostra informações do usuário)
 
 # Aula 3: Chat offline? Aprimorando as habilidades com State
+Conteúdos vistos: 
+- Tentar jogar o valor para tela ou usar o console para ter clareza no que está trabalhando.
