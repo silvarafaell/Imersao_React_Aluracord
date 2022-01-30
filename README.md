@@ -22,3 +22,4 @@ Conteúdos vistos:
 # Aula 3: Chat offline? Aprimorando as habilidades com State
 Conteúdos vistos: 
 - Tentar jogar o valor para tela ou usar o console para ter clareza no que está trabalhando.
+![Alt text](https://raw.githubusercontent.com/silvarafaell/Imersao_React_Aluracord/main/images/Aula%203.png "Aula 3")
