@@ -27,3 +27,7 @@ Conteúdos vistos:
 # Aula 4: Integrando com o Supabase.io
 Conteúdos será vistos: 
 - Nesta aula vamos integrar com o Supabase! Uma ferramenta de "Back-End as a Service" que vai nos ajudar a ter um banco de dados real time para guardar as mensagens do nosso chat.
+- Senha SupaBase: czKzeDi#cb$M
+
+comandos utilizados: 
+- npm i @supabase/supabase-js
