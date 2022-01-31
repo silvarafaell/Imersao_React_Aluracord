@@ -22,3 +22,8 @@ Conteúdos vistos:
 # Aula 3: Chat offline? Aprimorando as habilidades com State
 Conteúdos vistos: 
 - Tentar jogar o valor para tela ou usar o console para ter clareza no que está trabalhando.
+![Alt text](https://raw.githubusercontent.com/silvarafaell/Imersao_React_Aluracord/main/images/Aula%203.png "Aula 3")
+
+# Aula 4: Integrando com o Supabase.io
+Conteúdos será vistos: 
+- Nesta aula vamos integrar com o Supabase! Uma ferramenta de "Back-End as a Service" que vai nos ajudar a ter um banco de dados real time para guardar as mensagens do nosso chat.
