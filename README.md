@@ -33,3 +33,5 @@ comandos utilizados:
 - npm i @supabase/supabase-js
 
 ![Alt text](https://raw.githubusercontent.com/silvarafaell/Imersao_React_Aluracord/main/images/Aula%204.png "Aula 4")
+
+# Aula 5: Adicionando Suporte para Stickers e dicas essencias para proximos passos
