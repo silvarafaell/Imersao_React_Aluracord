@@ -68,8 +68,8 @@ export default function PaginaInicial() {
                         as="form"
                         onSubmit={function (infosDoEvento) {
                             infosDoEvento.preventDefault();  // para de recarregar a pagina ao clicar no Botão Entrar
-                            console.log('Alguem submeteu o form');
-                            roteamento.push('/chat');
+                            //console.log('Alguem submeteu o form');
+                            roteamento.push(`/chat?username=${username}`);
                             // windows.location.href = '/chat';  atualiza a pagina
                         }}
                         styleSheet={{
@@ -97,7 +97,7 @@ export default function PaginaInicial() {
                         <TextField
                             value={username}
                             onChange={function (event) {
-                                console.log('usuario digitou', event.target.value);
+                                //console.log('usuario digitou', event.target.value);
                                 // Onde ta o valor?
                                 const valor = event.target.value;
                                 // Trocar o valor da variavel
