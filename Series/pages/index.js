@@ -20,21 +20,7 @@ function Titulo(props) {
     )
 }
 
-// Componente React
-// function HomePage() {
-//     // JSX
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-//             <h2>Discord - Alura Matrix</h2>
-//         </div>
-//     )
-// }
-//export default HomePage
-
 export default function PaginaInicial() {
-    // const username = 'silvarafaell';
     const [username, setUsername] = React.useState('silvarafaell');
     const roteamento = useRouter();
 
@@ -67,10 +53,8 @@ export default function PaginaInicial() {
                     <Box
                         as="form"
                         onSubmit={function (infosDoEvento) {
-                            infosDoEvento.preventDefault();  // para de recarregar a pagina ao clicar no Botão Entrar
-                            //console.log('Alguem submeteu o form');
+                            infosDoEvento.preventDefault();
                             roteamento.push(`/chat?username=${username}`);
-                            // windows.location.href = '/chat';  atualiza a pagina
                         }}
                         styleSheet={{
                             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
@@ -81,27 +65,11 @@ export default function PaginaInicial() {
                         <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
                             {appConfig.name}
                         </Text>
-
-                        {/* <input
-                            type="text"
-                            value={username}
-                            onChange={function (event) {
-                                console.log('usuario digitou', event.target.value);
-                                // Onde ta o valor?
-                                const valor = event.target.value;
-                                // Trocar o valor da variavel
-                                // atráves do React e avise quem precisa
-                                setUsername(valor);
-                            }}  
-                        /> */}
                         <TextField
                             value={username}
                             onChange={function (event) {
-                                //console.log('usuario digitou', event.target.value);
-                                // Onde ta o valor?
+                              
                                 const valor = event.target.value;
-                                // Trocar o valor da variavel
-                                // atráves do React e avise quem precisa
                                 setUsername(valor);
                             }} 
                             fullWidth

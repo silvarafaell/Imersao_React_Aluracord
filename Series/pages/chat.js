@@ -22,19 +22,7 @@ export default function ChatPage() {
     const roteamento = useRouter();
     const usuarioLogado = roteamento.query.username;
     const [mensagem, setMensagem] = React.useState('');
-    const [listaMensagens, setListaMensagens] = React.useState([]); //Um array vazio
-
-    //Usuário
-    /*
-    -Usuário digita no campo textarea
-    -Aperta enter para enviar
-    -tem que adicionar o texto na listagem
-
-    //Dev
-    - [x] Campo criado
-    - [x] Vamos usar o onChange usa o useState (ter if pra caso seja enter pra limpar a variavel)
-    - [x] Lista de mensagens
-    */
+    const [listaMensagens, setListaMensagens] = React.useState([]);
 
     React.useEffect(() => {
         supabaseClient
@@ -42,12 +30,10 @@ export default function ChatPage() {
             .select('*')
             .order('id', { ascending: false })
             .then(({ data }) => {
-                // console.log('Dados da consulta:', data);
                 setListaMensagens(data);
             });
 
         escutaMensagensEmTempoReal((novaMensagem) => {
-            console.log('Nova mensagem', novaMensagem);
             setListaMensagens((valorAtualDaLista) => {
                 return [
                       novaMensagem,
@@ -59,18 +45,15 @@ export default function ChatPage() {
 
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
-            // id: listaMensagens.length + 1,
             de: usuarioLogado,
             texto: novaMensagem,
         };
-        // Chamada de um backend
         supabaseClient
             .from('mensagens')
             .insert([
                 mensagem
             ])
             .then(({ data }) => {
-                console.log('Criando mensagem: ', data);
             });
 
         setMensagem('');
@@ -114,13 +97,6 @@ export default function ChatPage() {
                     }}
                 >
                     <MessageList mensagens={listaMensagens} />
-                    {/* {listaMensagens.map((mensagemAtual) => {
-                        return (
-                            <li key={mensagemAtual.id}>
-                                {mensagemAtual.de}: {mensagemAtual.texto}
-                            </li>
-                        )
-                    })} */}
                     <Box
                         as="form"
                         styleSheet={{
@@ -135,9 +111,8 @@ export default function ChatPage() {
                                 setMensagem(valor);
                             }}
                             onKeyPress={(event) => {
-                                //OnKeyPress mostra propriedades da tecla
                                 if (event.key === 'Enter') {
-                                    event.preventDefault(); // dá uma quebra de linha
+                                    event.preventDefault();
                                     handleNovaMensagem(mensagem);
                                 }
                             }}
@@ -154,10 +129,8 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
-                        {/* CallBack */}
                         <ButtonSendSticker
                             onStickerClick={(sticker) => {
-                                // console.log('Usando o componente - Salva esse sticker no banco', sticker);
                                 handleNovaMensagem(':sticker: ' + sticker);
                             }}
                         />
@@ -187,7 +160,6 @@ function Header() {
 }
 
 function MessageList(props) {
-    //console.log(props.listaMensagens);
     return (
         <Box
             tag="ul"
@@ -243,7 +215,6 @@ function MessageList(props) {
                                 {(new Date().toLocaleDateString())}
                             </Text>
                         </Box>
-                        {/* [Declarativo] */}
                         {mensagem.texto.startsWith(':sticker:')
                             ? (
                                 <Image src={mensagem.texto.replace(':sticker:', '')} />
@@ -252,7 +223,6 @@ function MessageList(props) {
                                 mensagem.texto
                             )}
 
-                        {/* {mensagem.texto} */}
                     </Text>
                 );
             })}
